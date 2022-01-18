@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "code -exit -folder C:\Users\ACER\Documents\Inspirasi_baru\infinite_list_pagination", 0, false
