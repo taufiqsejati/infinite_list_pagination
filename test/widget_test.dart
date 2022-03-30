@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:infinite_list_pagination/main.dart';
+import 'package:infinite_list_pagination/mainnn.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
