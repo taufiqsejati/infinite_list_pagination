@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
     if (isRefresh) {
       currentPage = 0;
-      debugPrint('0 $currentPage ');
+      // debugPrint('0 $currentPage ');
     } else {
       if (currentPage >= totalPages) {
         refreshController.loadNoData();
@@ -71,12 +71,15 @@ class _HomePageState extends State<HomePage> {
 
     if (response.statusCode == 200) {
       // final result = welcomeFromJson(response.body);
+      debugPrint('1 ${response.body}');
       final result = articleFromJson(response.body);
+      debugPrint('2 $result');
+      debugPrint('3 ${result.data}');
       if (isRefresh) {
-        debugPrint('1 $currentPage');
-        articles = result.articles;
+        // debugPrint('1 $currentPage');
+        articles = result.data;
       } else {
-        articles.addAll(result.articles);
+        articles.addAll(result.data);
       }
 
       currentPage++;
@@ -124,7 +127,7 @@ class _HomePageState extends State<HomePage> {
           enablePullUp: true,
           onRefresh: () async {
             final result = await getPassengerData(isRefresh: true);
-            debugPrint('2 $currentPage $totalPages $result');
+            // debugPrint('2 $currentPage $totalPages $result');
             if (result) {
               refreshController.refreshCompleted();
             } else {
@@ -133,12 +136,12 @@ class _HomePageState extends State<HomePage> {
           },
           onLoading: () async {
             final result = await getPassengerData();
-            debugPrint('$currentPage $totalPages');
+            // debugPrint('$currentPage $totalPages');
             if (result) {
-              debugPrint(articles.toString());
+              // debugPrint(articles.toString());
               refreshController.loadComplete();
             } else if (currentPage >= totalPages) {
-              debugPrint('error 0');
+              // debugPrint('error 0');
               refreshController.loadNoData();
             } else {
               refreshController.loadFailed();
