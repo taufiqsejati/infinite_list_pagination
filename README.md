@@ -1,6 +1,6 @@
 # infinite_list_pagination
 
-A new Flutter project.
+A new Flutter project : Infinite List Pagination.
 
 ## Getting Started
 
